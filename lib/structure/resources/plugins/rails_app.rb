@@ -7,7 +7,7 @@ module Healing
         
         lingo self, options.to_hash do        #pass on options to the lingo block
           path = options.name
-          recipe 'passenger', :rails_version => '2.3.2', :passenger_version => '2.2.4'
+          recipe 'passenger', :rails_version => '2.3.2', :passenger_version => '2.2.5'
           git_repo path, :url => options.repo, :user => 'www-data', :group => 'www-data'
           
           run 'choose DB', :description => "read rails config and install the right db package", :path => path, :environment => options.environment do
