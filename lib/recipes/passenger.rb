@@ -1,9 +1,9 @@
 #recipe for running rails with apache and passenger (mod_rails)
 
-rubygem 'rails'
-rubygem 'passenger', :version => @options.version
+rubygem 'rails', :version => @options.rails_version
+rubygem 'passenger', :version => @options.passenger_version
 
-base = "/var/lib/gems/1.8/gems/passenger-#{@options.version}"
+base = "/var/lib/gems/1.8/gems/passenger-#{@options.passenger_version}"
 
 run 'build passenger module?', :description => "run passenger install scripts unless already build" do
   if ::File.exists? "#{base}/ext/apache2/mod_passenger.so"

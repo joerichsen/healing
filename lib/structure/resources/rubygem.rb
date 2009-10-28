@@ -63,6 +63,7 @@ module Healing
       end
       
       def heal
+        # TODO consider gem version as well
         if @@gems[options.name.to_s]
           puts_title :gem, "#{options.name} (already installed)"
         else
